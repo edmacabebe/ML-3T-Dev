@@ -1,0 +1,20 @@
+{
+  "name": "<%= appName %>",
+  "version": "<%= appVersion %>",
+  "description": "<%= appDescription %>",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<%= userName %>/<%= appName %>"
+  },
+  "main": "server.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "engine": {
+    "node": ">=8.0.0"
+  }
+}
