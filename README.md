@@ -3,11 +3,14 @@
 > Automated MarkLogic 3-Tier DEV environment
 
 The intent is automate a DEV environment in 3-Tier architecture using 
-[MarkLogic Application Server as Data Backend](www.marklogic.com)
-[NodeJS and Express as Business Logic Middleware](www.npmjs.com) or soon -> Spring Boot
-[Angular as Presentation Frontend](cli.angular.cio)
-and a [Jenkins as CI/CD server](www.jenkins.org) 
-all are deployed as [Docker images](www.docker.com) in a Docker Engine
+1. [MarkLogic Application Server as Data Backend](www.marklogic.com)
+2. [NodeJS and Express as Business Logic Middleware](www.npmjs.com) or soon -> Spring Boot
+3. [Angular as Presentation Frontend](cli.angular.cio)
+4. and a [Jenkins as CI/CD server](www.jenkins.org) 
+
+All are deployed as [Docker images](www.docker.com) in a Docker Engine
+
+
 
 ## Getting Started
 
@@ -58,7 +61,6 @@ $ docker run -p 3000:3000 -d my-logic-layer
 
 Call to initialize sample DB: Samplestack 
 Open a browser and voila, get set to code!
-
 
 
 ## Contributing
