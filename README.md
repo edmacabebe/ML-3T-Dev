@@ -2,10 +2,22 @@
 
 > Automated MarkLogic 3-Tier DEV environment
 
+The intent is automate a DEV environment in 3-Tier architecture using 
+[MarkLogic Application Server as Data Backend](www.marklogic.com)
+[NodeJS and Express as Business Logic Middleware](www.npmjs.com) or soon -> Spring Boot
+[Angular as Presentation Frontend](cli.angular.cio)
+and a [Jenkins as CI/CD server](www.jenkins.org) 
+all are deployed as [Docker images](www.docker.com) in a Docker Engine
 
 ## Getting Started
 
-Install `slush-ml-3t` globally:
+Make sure that the following are installed first.
+1. Node
+2. NPM
+3. Docker
+4. Java
+
+Then install `slush-ml-3t` globally:
 
 ```bash
 $ npm install -g slush-ml-3t
@@ -13,25 +25,41 @@ $ npm install -g slush-ml-3t
 
 ### Usage
 
-Create a new folder for your project:
+Create a new folder for your project and Run the generator from within this new folder
 
 ```bash
-$ mkdir my-slush-ml-3t
+$ mkdir my-ml-dev && cd my-ml-dev && slush ml-3t
 ```
 
-Run the generator from within the new folder:
+Run the CI/CD Jenkins Docker and invoke the ff scripts from with in Jenkins
+
+Build the built-in Dockerfile and run for the PresentationLayer
 
 ```bash
-$ cd my-slush-ml-3t && slush ml-3t
+$ cd PRESENT && docker build -t my-logic-layer .
+$ docker images
+$ docker run -p 3000:3000 -d my-logic-layer
+```
+Build the built-in Dockerfile and run for the BusinessLayer
+
+```bash
+$ cd LOGIC && docker build -t my-logic-layer .
+$ docker images
+$ docker run -p 3000:3000 -d my-logic-layer
 ```
 
-## Getting To Know Slush
+Build the built-in Dockerfile and run for the DataLayer
 
-Slush is a tool that uses Gulp for project scaffolding.
+```bash
+$ cd DATA && docker build -t my-logic-layer .
+$ docker images
+$ docker run -p 3000:3000 -d my-logic-layer
+```
 
-Slush does not contain anything "out of the box", except the ability to locate installed slush generators and to run them with liftoff.
+Call to initialize sample DB: Samplestack 
+Open a browser and voila, get set to code!
 
-To find out more about Slush, check out the [documentation](https://github.com/slushjs/slush).
+
 
 ## Contributing
 
